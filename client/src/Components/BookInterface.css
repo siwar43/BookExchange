@@ -1,0 +1,246 @@
+/* Container principal avec padding pour navbar fixe */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+  padding-top: 200px; /* ajuste selon la hauteur de ta navbar */
+  display: flex;
+  gap: 3rem; /* espace entre filtres et cards */
+  flex-wrap: wrap;
+}
+
+/* Section filtres */
+.filter-section {
+  width: 100%;
+  max-width: 300px;
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  align-self: flex-start;
+      margin-top: 57PX;
+}
+
+.filter-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+/* Cards de filtre */
+.filter-card {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  overflow: hidden;
+}
+
+.filter-card-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.75rem 1rem;
+  background-color: #f9f9f9;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.filter-card-body {
+  padding: 1rem;
+}
+
+/* Slider Price */
+.price-slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 8px;
+  border-radius: 5px;
+  outline: none;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(to right, #1E90FF 0%, #1E90FF 50%, #ddd 50%, #ddd 100%);
+}
+
+/* Thumb */
+.price-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  background: #1E90FF;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid #333;
+  margin-top: -6px;
+}
+
+.price-slider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  background: #1E90FF;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid #333;
+}
+
+.price-slider::-moz-range-track {
+  height: 8px;
+  background: #ddd;
+  border-radius: 5px;
+}
+
+/* Valeurs du slider */
+.price-values {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+}
+
+/* Catégories */
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem 1rem;
+  margin-bottom: 1rem;
+}
+
+.category-list {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  justify-content: flex-start;
+}
+
+.category-list input[type="checkbox"] {
+  margin: 0;
+  flex-shrink: 0;
+}
+
+.filter-select {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.category-label {
+  font-weight: 600;
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.category-separator {
+  border: 0;
+  height: 2px;
+  background-color: #ccc;
+  margin: 0.25rem 0 0.5rem 0;
+}
+
+/* Section livres */
+.book-section {
+  flex: 3 1 700px;
+  display: flex;
+  flex-direction: column;
+}
+
+.books-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.books-header h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #333;
+}
+
+.search-input {
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  width: 250px;
+}
+
+.book-grid {
+  flex: 3 1 700px;
+  min-width: 300px;
+}
+
+.book-card {
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 1rem;
+  background-color: #fff;
+  text-align: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.book-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.book-card img {
+  width: 100%;
+  height: 300px;
+  border-radius: 4px;
+  margin-bottom: 0.5rem;
+}
+
+.book-card h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+  color: #333;
+}
+
+.book-card p {
+  margin: 0.25rem 0;
+  color: #666;
+}
+
+.book-card .price {
+  font-weight: bold;
+  color: #111;
+}
+
+/* Grid responsive */
+.grid {
+  display: grid;
+  row-gap: 30px;
+  column-gap: 40px;
+}
+
+.grid-cols-3 {
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+/* Labels */
+.filter-label {
+  font-weight: 600;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+/* Ligne de séparation */
+.filter-separator {
+  border: 0;
+  height: 2px;
+  background-color: #ccc;
+  margin-bottom: 1rem;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .filter-section, .book-grid {
+    flex: 1 1 100%;
+  }
+
+  .grid-cols-3 {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+}

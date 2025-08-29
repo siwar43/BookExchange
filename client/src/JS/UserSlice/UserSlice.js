@@ -47,7 +47,7 @@ export const userSlice = createSlice({
     },
   },
 
-   extraReducers: (builder) => {
+  extraReducers: (builder) => {
     builder
       .addCase(userRegister.pending, (state) => {
         state.status = "pending";
@@ -60,7 +60,7 @@ export const userSlice = createSlice({
       .addCase(userRegister.rejected, (state) => {
         state.status = "fail";
       })
-         .addCase(userlogin.pending, (state) => {
+      .addCase(userlogin.pending, (state) => {
         state.status = "pending";
       })
       .addCase(userlogin.fulfilled, (state, action) => {
@@ -75,7 +75,7 @@ export const userSlice = createSlice({
         state.status = "pending";
       })
       .addCase(userCurrent.fulfilled, (state, action) => {
-     state.status = "successsss";
+      state.status = "successsss";
       state.user = action.payload?.data.user;
       })
       .addCase(userCurrent.rejected, (state) => {

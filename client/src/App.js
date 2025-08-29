@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import Register from './Components/Register';
 import Login from './Components/Login';
@@ -11,6 +10,8 @@ import PrivateRoute from './Routes/PrivateRoute';
 import Home from './Components/Home';
 import About from './Components/About';
 import Navbarr from './Components/Navbarr';
+import { getbook } from './JS/bookSlice';
+import BookInterface from './Components/BookInterface';
 
 
 function App() {
@@ -18,7 +19,7 @@ function App() {
   const dispatch=useDispatch();
     useEffect(() => {
     dispatch(userCurrent());
-    dispatch(getbooks());
+    dispatch(getbook());
   });
   return (
     <div className="App">
@@ -27,6 +28,7 @@ function App() {
       <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
+          <Route path="/book" element={<BookInterface />} /> {/* Nouvelle route pour les livres */}
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
           <Route element={<PrivateRoute/>}>
