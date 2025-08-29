@@ -12,6 +12,7 @@ connectDB();
 app.use (express.json());
 app.use(cors());
 app.use ("/user" , require("./routes/Authentification"));
+app.use ("/book" , require("./routes/Books"));
 
 // Server
 const PORT = process.env.PORT;

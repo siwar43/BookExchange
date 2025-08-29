@@ -18,6 +18,7 @@ function App() {
   const dispatch=useDispatch();
     useEffect(() => {
     dispatch(userCurrent());
+    dispatch(getbooks());
   });
   return (
     <div className="App">
