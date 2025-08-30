@@ -11,6 +11,7 @@ const BookSchema = new schema ({
     pages : Number , 
     image : String , 
     language : String , 
+    rate : Number,
 
 });
 
