@@ -19,8 +19,7 @@ function Home() {
           </div>
         </div>
       </div>
-
-
+      
       <section>
         hello
       </section>

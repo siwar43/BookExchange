@@ -12,29 +12,30 @@ import About from './Components/About';
 import Navbarr from './Components/Navbarr';
 import { getbook } from './JS/bookSlice';
 import BookInterface from './Components/BookInterface';
-
+import BookDetails from './Components/BookDetails';
 
 function App() {
   const isAuth = localStorage.getItem("token");
-  const dispatch=useDispatch();
-    useEffect(() => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
     dispatch(userCurrent());
     dispatch(getbook());
-  });
+  }, [dispatch]);
+
   return (
     <div className="App">
-
-      <Navbarr/>
+      <Navbarr />
       <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/book" element={<BookInterface />} /> {/* Nouvelle route pour les livres */}
-          <Route path="/register" element={<Register />} />
-          <Route path="/login" element={<Login />} />
-          <Route element={<PrivateRoute/>}>
-            <Route path="/profil" element={<Profile />} />
-          </Route>
-
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/book" element={<BookInterface />} /> 
+        <Route path="/book/:id" element={<BookDetails />} /> {/* ✅ Route dynamique */}
+        <Route path="/register" element={<Register />} />
+        <Route path="/login" element={<Login />} />
+        <Route element={<PrivateRoute />}>
+          <Route path="/profil" element={<Profile />} />
+        </Route>
       </Routes>
     </div>
   );

@@ -1,4 +1,3 @@
-/* Appliquer une police globale */
 body {
   background-color: #eceeef;
   margin: 0;
@@ -316,10 +315,10 @@ body {
 }
 
 .more-btn {
-  display: inline-flex;       /* flex horizontal */
-  align-items: center;        /* centre verticalement le texte et l'icône */
-  justify-content: center;    /* centre horizontalement le contenu du bouton */
-  gap: 5px;                   /* espace entre texte et icône */
+  display: inline-flex;     
+  align-items: center;        
+  justify-content: center;   
+  gap: 5px;                   
   padding: 8px 16px;
   border: none;
   border-radius: 8px;
@@ -328,18 +327,20 @@ body {
   cursor: pointer;
   font-weight: 600;
   font-size: 14px;
-  line-height: 1;             /* important pour l'alignement vertical */
+  line-height: 1;             
 }
 
 .more-btn svg {
-  display: block;             /* important : supprime le petit décalage inline */
-  vertical-align: middle;     /* centre l'icône verticalement */
+  display: block;             
   width: 16px;
   height: 16px;
 }
 
 .more-btn:hover {
-  background-color: #2563EB;
+    background: #0056b3;
+    text-decoration: none;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+    color : white;
 }
 
 

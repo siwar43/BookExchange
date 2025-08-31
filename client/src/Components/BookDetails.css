@@ -1,0 +1,191 @@
+.book-detail-container {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+    max-width: 1100px;
+    margin: 50px auto;
+    padding: 29px;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    padding-top: 120px;
+}
+
+.book-detail-image img {
+    width: 350px;
+    max-height: 480px;
+    border-radius: 8px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
+}
+
+.book-detail-info {
+    flex: 1;
+}
+
+.book-detail-info h2 {
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #484848;
+    letter-spacing: 2px;
+}
+
+.rating {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 40px;
+}
+
+.rate-value {
+    font-weight: bold;
+    color: #484848;
+}
+
+.meta {
+    display: flex;
+    gap: 100px;
+    margin: 10px 0;
+}
+
+.meta p {
+    margin: 0;
+    color: #484848;
+}
+
+.description {
+    margin: 15px 0;
+    margin-right: 20px;
+    font-size: 15px;
+    line-height: 1.6;
+    color: #444;
+    text-align: justify;
+}
+
+.purchase-box {
+    display: flex;
+    align-items: center;
+    gap: 30px;     
+    margin: 25px 0;
+    flex-wrap: wrap;
+    margin-bottom: 5px;
+    margin-top: 2px;
+}
+
+.price-box {
+    font-size: 22px;
+    font-weight: bold;
+    color: #1E90FF;
+}
+
+.new-price {
+    font-weight: bold;
+    color: #2ba6f9;
+    margin-right: 120px;
+}
+
+.actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.quantity {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: white;
+    padding: 6px 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #333;
+    min-width: 110px;
+    justify-content: center;
+}
+
+.quantity button {
+    width: 32px;
+    height: 32px;
+    border: none;
+    background: rgb(238, 238, 238);
+    color: rgb(5, 5, 5);
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.quantity span {
+    min-width: 20px;
+    text-align: center;
+    font-size: 17px;
+}
+
+.add-cart {
+    background: #2ba6f9;   /* fond bleu très clair */
+    height: 46px;
+    border: 1px solid #2ba6f9;
+    padding: 10px 20px;
+    color: white;        /* texte DodgerBlue */
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.add-cart:hover {
+    background: white; /* un bleu légèrement plus foncé pour le hover */
+    color: #2ba6f9;       /* texte reste DodgerBlue */
+    border-color: 1px solid #2ba6f9;
+}
+
+.back-btn {
+    display: inline-block;
+    margin-top: 8px;
+    padding: 10px 18px;
+    background: linear-gradient(90deg, #007bff, #00a1ff);
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    border-radius: 8px;
+    transition: 0.4s;
+}
+
+.back-btn:hover {
+    background: #0056b3;
+    text-decoration: none; /* <-- empêche le soulignement */
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+    color : white;
+}
+
+
+.wishlist {
+    background: white;
+    border: 1px solid #ddd;
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 22px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+    color: #555;
+}
+
+.wishlist:hover {
+    border-color: #87CEFA; 
+    color: #87CEFA;
+}
+
+.wishlist.active {
+    border: 1px solid #1E90FF;
+    color: #1E90FF;
+    background: #E6F3FF;   
+}
+
