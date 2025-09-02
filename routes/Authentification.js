@@ -14,9 +14,9 @@ const User = require("../models/user");
 
 //register
 router.post("/register", registerRules(), validation, async (req, res) => {
-  const { username, email, password, image, address } = req.body;
+  const { username, email, password, image, address , phone  , country  , city , title , languages , age , description } = req.body;
   try {
-    const newUser = new User({ username, email, password, image, address });
+    const newUser = new User({ username, email, password, image, address , phone  , country  , city , title , languages , age , description });
     // check if the email exist
     const searchedUser = await User.findOne({ email });
 
@@ -85,4 +85,45 @@ router.post("/login", loginRules(), validation, async (req, res) => {
 router.get("/current", isAuth(), (req, res) => {
   res.status(200).send({ user: req.user });
 });
+
+
+
+
+// Get All users
+router.get("/", async(req , res)=>{
+    try {
+        let result = await User.find();
+        res.send ({users:result, msg :"All users"})
+    } catch (error) {
+        console.log(error)
+        
+    }
+})
+
+
+// Delete book
+router.delete("/:id", async(req , res)=>{
+    try {
+        let result = await User.findByIdAndDelete(req.params.id);
+        res.send ({msg :"The user is deleted"})
+    } catch (error) {
+        console.log(error)
+        
+    }
+})
+
+// Update user
+router.put("/:id", async(req , res)=>{
+    try {
+        let result = await User.findByIdAndUpdate(
+            {_id:req.params.id},
+            {$set:{...req.body}}
+        );
+        res.send ({msg :"The user is updated"})
+    } catch (error) {
+        console.log(error)
+        
+    }
+})
+
 module.exports = router;

@@ -12,7 +12,7 @@ export const userRegister = createAsyncThunk("user/register", async (user) => {
     console.log(error);
   }
 });
-export const userlogin = createAsyncThunk("user/logi", async (user) => {
+export const userlogin = createAsyncThunk("user/login", async (user) => {
   try {
     let response = await axios.post("http://localhost:5000/user/login", user);
     return await response;
@@ -32,9 +32,38 @@ export const userCurrent = createAsyncThunk("user/current", async () => {
     console.log(error);
   }
 });
+export const getuser = createAsyncThunk("user/get", async () => {
+    try {
+        let result = await axios.get("http://localhost:5000/user/");
+        return result;
+    } catch (error) {
+        console.log(error);
+    }
+});
+export const deleteuser = createAsyncThunk("user/delete", async (id) => {
+    try {
+        let result = await axios.delete(`http://localhost:5000/user/${id}`);
+        return result;
+    } catch (error) {
+        console.log(error);
+    }
+});
+
+export const edituser = createAsyncThunk(
+    "user/edit",
+    async ({ id, edited }) => {
+        try {
+        let result = await axios.put(`http://localhost:5000/user/${id}`, edited);
+        return result;
+        } catch (error) {
+        console.log(error);
+        }
+    }
+);
 const initialState = {
   user: null,
   status: null,
+  userlist : []
 };
 
 export const userSlice = createSlice({
@@ -79,6 +108,16 @@ export const userSlice = createSlice({
       state.user = action.payload?.data.user;
       })
       .addCase(userCurrent.rejected, (state) => {
+        state.status = "fail";
+      })
+      .addCase(getuser.pending, (state) => {
+        state.status = "pending";
+      })
+      .addCase(getuser.fulfilled, (state, action) => {
+        state.status = "success";
+        state.userlist = action.payload.data.users;
+      })
+      .addCase(getuser.rejected, (state) => {
         state.status = "fail";
       })
   },

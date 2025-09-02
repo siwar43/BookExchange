@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getbook } from '../JS/bookSlice';
 import ReactStars from "react-rating-stars-component";
 import { TiChevronRight } from "react-icons/ti";
-import { Link } from "react-router-dom"; // ✅ import Link
+import { Link } from "react-router-dom";
 import './BookInterface.css';
 
 const BookInterface = () => {
@@ -109,7 +109,7 @@ const BookInterface = () => {
       {/* Books */}
       <div className="book-section">
         <div className="books-header">
-          <h2>Books</h2>
+          <h2>Library</h2>
           <input
             type="text"
             placeholder="Search books..."

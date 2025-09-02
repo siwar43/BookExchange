@@ -81,7 +81,7 @@
 .new-price {
     font-weight: bold;
     color: #2ba6f9;
-    margin-right: 120px;
+    margin-right: 310px;
 }
 
 .actions {
@@ -89,41 +89,6 @@
     align-items: center;
     gap: 10px;
     margin: 20px 0;
-}
-
-.quantity {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    background: white;
-    padding: 6px 12px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 16px;
-    color: #333;
-    min-width: 110px;
-    justify-content: center;
-}
-
-.quantity button {
-    width: 32px;
-    height: 32px;
-    border: none;
-    background: rgb(238, 238, 238);
-    color: rgb(5, 5, 5);
-    font-size: 18px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: 0.3s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.quantity span {
-    min-width: 20px;
-    text-align: center;
-    font-size: 17px;
 }
 
 .add-cart {
@@ -187,5 +152,79 @@
     border: 1px solid #1E90FF;
     color: #1E90FF;
     background: #E6F3FF;   
+}
+
+/* ---- SweetAlert2 Theme ---- */
+.swal-book.swal2-popup {
+    border-radius: 15px;
+    padding: 24px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    background: #fff;
+    width: 450px;
+}
+
+.swal-book-title {
+    color: #484848;
+    letter-spacing: 1px;
+    font-weight: 700;
+}
+
+.swal-book .swal2-html-container,
+.swal-book-text {
+    color: #444;
+    font-size: 15px;
+    text-align: left;
+}
+
+/* Boutons */
+.swal-btn-confirm {
+    background: linear-gradient(90deg, #007bff, #00a1ff);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 18px;
+    font-weight: 500;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.12);
+    transition: 0.25s;
+    margin: 0 6px;
+    font-size: 13px;
+}
+.swal-btn-confirm:hover {
+    background: #0056b3;
+    transform: translateY(-1px);
+}
+
+.swal-btn-cancel {
+    background: #fff;
+    color: #2ba6f9;
+    border: 1px solid #2ba6f9;
+    border-radius: 8px;
+    padding: 10px 18px;
+    font-weight: 500;
+    transition: 0.25s;
+    margin: 0 6px;
+    font-size: 13px;
+}
+.swal-btn-cancel:hover {
+    background: #E6F3FF;
+    transform: translateY(-1px);
+}
+
+/* Icone success */
+.swal2-icon.swal2-success {
+    border-color: #2ba6f9 !important;
+    color: #2ba6f9 !important;
+}
+.swal2-icon.swal2-success [class^="swal2-success-line"] {
+    background-color: #2ba6f9 !important;
+}
+.swal2-icon.swal2-success .swal2-success-ring {
+    border-color: rgba(43,166,249,0.3) !important;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .swal-book.swal2-popup { width: 92% !important; }
+    .swal-btn-confirm, .swal-btn-cancel { width: 100%; margin: 6px 0; }
 }
 

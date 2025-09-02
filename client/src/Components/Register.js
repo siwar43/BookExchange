@@ -2,52 +2,34 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { userRegister } from "../JS/UserSlice/UserSlice";
+import './Register.css';
 
 function Register() {
     const [register, setRegister] = useState({
         username: "",
         email: "",
         password: "",
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/User-avatar.svg/2048px-User-avatar.svg.png",
-        address: "",
     });
 
     const [errors, setErrors] = useState({});
-    const navigate = useNavigate();
     const dispatch = useDispatch();
+    const navigate = useNavigate();
 
+    // Validation
     const validate = () => {
         const newErrors = {};
-
-        // Username
-        if (!register.username) {
-            newErrors.username = "Please enter your username.";
-        }
-
-        // Email
-        if (!register.email) {
-        newErrors.email = "Please enter your email.";
-        } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(register.email)) {
-        newErrors.email = "Please enter a valid email address.";
-        }
-
-        // Password
-        if (!register.password) {
-        newErrors.password = "Please enter your password.";
-        } else if (register.password.length < 8) {
-        newErrors.password = "Password must be at least 8 characters.";
-        }
-
-        // Address
-        if (!register.address) {
-            newErrors.address = "Please enter your address.";
-        }
-
+        if (!register.username) newErrors.username = "Enter your name.";
+        if (!register.email) newErrors.email = "Enter your email.";
+        else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(register.email)) newErrors.email = "Invalid email.";
+        if (!register.password) newErrors.password = "Enter password.";
+        else if (register.password.length < 8) newErrors.password = "Password must be 8+ chars.";
         setErrors(newErrors);
         return Object.keys(newErrors).length === 0;
     };
 
-    const handleRegister = () => {
+    // Submit
+    const handleRegister = (e) => {
+        e.preventDefault();
         if (validate()) {
         dispatch(userRegister(register));
         navigate("/profil");
@@ -55,73 +37,57 @@ function Register() {
     };
 
     return (
-        <div>
         <div className="wrapper">
-            <form onSubmit={(e) => e.preventDefault()} className="form-signin">
-            <h2 className="form-signin-heading">Please Register</h2>
+        <div className="logo-container">
+            <img src="/Logo.png" alt="Logo" className="logo" />
+        </div>
 
+        <h2 className="form-heading">Create an account</h2>
+
+        <form onSubmit={handleRegister} className="form-signin">
+
+            {/* Username */}
+            <div className="form-group">
             <input
                 type="text"
-                className="form-control"
-                placeholder="Username"
                 value={register.username}
-                onChange={(e) =>
-                setRegister({ ...register, username: e.target.value })
-                }
+                onChange={(e) => setRegister({ ...register, username: e.target.value })}
             />
-            {errors.username && (
-                <span style={{ color: "red" }}>{errors.username}</span>
-            )}
+            <label>Your Name</label>
+            {errors.username && <span className="error">{errors.username}</span>}
+            </div>
 
+            {/* Email */}
+            <div className="form-group">
             <input
-                type="text"
-                className="form-control"
-                placeholder="Email Address"
+                type="email"
                 value={register.email}
-                onChange={(e) =>
-                setRegister({ ...register, email: e.target.value })
-                }
+                onChange={(e) => setRegister({ ...register, email: e.target.value })}
             />
-            {errors.email && <span style={{ color: "red" }}>{errors.email}</span>}
+            <label>Email</label>
+            {errors.email && <span className="error">{errors.email}</span>}
+            </div>
 
+            {/* Password */}
+            <div className="form-group">
             <input
                 type="password"
-                className="form-control"
-                placeholder="Password"
                 value={register.password}
-                onChange={(e) =>
-                setRegister({ ...register, password: e.target.value })
-                }
+                onChange={(e) => setRegister({ ...register, password: e.target.value })}
             />
-            {errors.password && (
-                <span style={{ color: "red" }}>{errors.password}</span>
-            )}
+            <label>Password</label>
+            {errors.password && <span className="error">{errors.password}</span>}
+            </div>
 
-            <input
-                type="text"
-                className="form-control"
-                placeholder="Address"
-                value={register.address}
-                onChange={(e) =>
-                setRegister({ ...register, address: e.target.value })
-                }
-            />
-            {errors.address && (
-                <span style={{ color: "red" }}>{errors.address}</span>
-            )}
-
-            <button
-                className="btn btn-lg btn-primary btn-block"
-                onClick={handleRegister}
-            >
-                Register
+            {/* Submit */}
+            <button type="submit" className="btn btn-primary">
+            Sign Up
             </button>
 
-            <h5 style={{ marginTop: "30px" }}>
-                You already have an account? <Link to="/login">Sign in</Link>
+            <h5 className="login-link">
+            Already have an account? <Link to="/login">Sign in</Link>
             </h5>
-            </form>
-        </div>
+        </form>
         </div>
     );
 }

@@ -16,6 +16,13 @@ const UserSchema = new schema ({
     },
     image : String , 
     address : String , 
+    phone : String ,
+    country : String , 
+    city : String , 
+    title : String ,
+    languages : String , 
+    age : String , 
+    description : String , 
 });
 
 module.exports = mongoose.model("user", UserSchema);

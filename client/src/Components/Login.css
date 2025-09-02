@@ -1,0 +1,182 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+}
+
+.wrapper {
+    max-width: 450px;
+    width: 100%;
+    padding: 50px 20px 40px 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.logo-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.logo {
+    width: 160px;
+    height: auto;
+}
+
+.form-heading {
+    text-align: center;
+    margin-bottom: 40px;
+    color: #333;
+    letter-spacing: 1px;
+}
+
+.form-group {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    outline: none;
+    background: none;
+}
+
+.form-group label {
+    position: absolute;
+    top: 12px;
+    left: 10px;
+    color: #999;
+    font-size: 16px;
+    pointer-events: none;
+    transition: 0.2s ease all;
+}
+
+.form-group input:focus + label,
+.form-group input:not(:placeholder-shown) + label {
+    top: -8px;
+    left: 10px;
+    font-size: 12px;
+    color: #1E90FF;
+    background-color: #fff;
+    padding: 0 5px;
+}
+
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    cursor: pointer;
+    user-select: none;
+    font-size: 14px;
+    color: #333;
+}
+
+/* Cacher le checkbox natif */
+.checkbox-container input[type="checkbox"] {
+    display: none;
+}
+
+/* Créer un carré personnalisé */
+.checkbox-container label {
+    position: relative;
+    padding-left: 30px;
+    cursor: pointer;
+    font-weight: bold; /* <-- Retire le bold */
+    letter-spacing: 1px;
+}
+
+/* Le carré */
+.checkbox-container label::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    transition: all 0.2s ease;
+}
+
+/* Coché */
+.checkbox-container input[type="checkbox"]:checked + label::before {
+    background-color: #28a745;
+    border-color: #28a745;
+}
+
+/* La coche */
+.checkbox-container label::after {
+    content: "";
+    position: absolute;
+    left: 5px;
+    top: 2px;
+    width: 6px;
+    height: 12px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+    opacity: 0;
+    transition: all 0.2s ease;
+}
+
+.checkbox-container input[type="checkbox"]:checked + label::after {
+    opacity: 1;
+}
+
+.btn-primary {
+    width: 100%;
+    padding: 12px;
+    background-color: #28a745;
+    border: none;
+    color: white;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
+}
+
+.btn-primary:hover {
+    background-color: #218838;
+}
+
+.btn-primary:active {
+    background-color: #19692c;
+    transform: scale(0.97);
+}
+
+.btn-primary:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.login-link {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.login-link a {
+    color: #1E90FF;
+    text-decoration: none;
+}
+
+.login-link a:hover {
+    text-decoration: underline;
+}
+
+
+.error-message {
+    color: red;
+    font-size: 14px;
+    margin-bottom: 15px;
+    text-align: center;
+}

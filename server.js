@@ -13,6 +13,7 @@ app.use (express.json());
 app.use(cors());
 app.use ("/user" , require("./routes/Authentification"));
 app.use ("/book" , require("./routes/Books"));
+app.use("/order", require("./routes/Orders"));
 
 // Server
 const PORT = process.env.PORT;
