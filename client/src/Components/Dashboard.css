@@ -1,0 +1,407 @@
+.admin-dashboard-container {
+    display: flex;
+    min-height: 100vh;
+    width: 100%;
+    background: linear-gradient(180deg, #007aff 0%, #104f92 100%);
+}
+
+/* Sidebar */
+.sidebar {
+    width: 300px;
+    background-color: #f8f9fa;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+}
+
+/* Logo en haut de la sidebar */
+.logo-container {
+    padding: 20px;
+    text-align: center;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    margin-bottom: 0;
+}
+
+.logo-img {
+    width: 120px;
+    height: auto;
+    object-fit: contain;
+}
+
+.user-info {
+    padding: 30px 20px;
+    text-align: center;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    color : #0056b3;
+}
+
+.user-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 3px solid white;
+    margin-bottom: 5px;
+}
+
+.user-info h3 {
+    margin: 10px 0 5px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.user-info p {
+    margin: 0;
+    opacity: 0.8;
+    font-size: 14px;
+}
+
+.dash nav ul {
+    list-style: none;
+    padding: 20px 0;
+    margin: 0;
+    flex: 1;
+}
+
+.dash nav ul li {
+    display: flex;
+    align-items: center;
+    padding: 15px 25px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s;
+    color : #0056b3;
+}
+
+.dash nav ul li:hover,
+.dash nav ul li.active {
+  background-color: #007aff;
+  color:white
+}
+
+.icon {
+  margin-right: 12px;
+  font-size: 20px;
+}
+
+/* Main content */
+.main-content {
+  flex: 1;
+  padding: 30px;
+  overflow-y: auto;
+  width: 1236px;
+}
+
+.dashboard-home .header h2 {
+  margin: 0 0 20px;
+  font-size: 30px;
+  color: #dad9d9;
+  margin-bottom: 50px;
+  margin-top: 50px;
+  margin-left: 50px;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+/* Conteneur des stat cards */
+.stat-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  margin-bottom: 300px;
+  gap : 50px
+}
+
+/* Cartes individuelles */
+.stat-card {
+  background: white;
+  width: 200px;             
+  height: 150px;              
+  padding: 10px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; 
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  transition: transform 0.2s;
+}
+
+.stat-card:hover {
+  transform: translateY(-3px);
+}
+
+/* Label et icône */
+.stat-card .label {
+  display: flex;
+  align-items: center;
+  justify-content: center;  
+  gap: 8px;                  
+  font-size: 14px;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 10px;
+}
+
+/* Icône */
+.stat-card .icon {
+  font-size: 28px;
+  color: #007aff;
+}
+
+/* Valeur */
+.stat-card .value {
+  font-size: 28px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Tables */
+.table-section h2 {
+  margin: 0 0 20px;
+  font-size: 35px;
+  color: #dad9d9;
+  margin-bottom: 50px;
+  margin-top: 50px;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  margin-left: 50px;
+}
+
+table {
+    width: 850px;
+    border-collapse: collapse;
+    margin-top: 10px;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: left;
+  text-align: center;
+}
+
+th {
+  background-color: white;
+  color: #007aff;
+  text-align: center;
+}
+
+.table-img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Edit Button */
+.edit-btn {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 18px;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 8px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0px 4px 6px rgba(0,0,0,0.2);
+}
+
+.edit-btn:hover {
+  background-color: #45a049;
+  transform: translateY(-2px);
+}
+
+.edit-btn:active {
+  background-color: #3e8e41;
+  transform: translateY(0);
+}
+
+/* Delete Button */
+.delete-btn {
+  background-color: #ff4d4d;
+  color: white;
+  padding: 10px 18px; 
+  font-size: 15px;   
+  font-weight: 600;
+  border-radius: 8px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;          
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0px 4px 6px rgba(0,0,0,0.2);
+}
+
+.delete-btn:hover {
+  background-color: #cc0000;
+  transform: translateY(-2px);
+}
+
+.delete-btn:active {
+  background-color: #b30000;
+  transform: translateY(0);
+}
+
+td .edit-btn,
+td .delete-btn {
+  margin: 0 auto;    
+  display: block;
+}
+
+.table-scroll {
+  max-height: 400px; 
+  overflow-y: auto;  
+  overflow-x: auto;
+  margin: 0 auto;
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+/* Style du scrollbar (modern browsers) */
+.table-scroll::-webkit-scrollbar {
+  width: 10px;
+}
+
+.table-scroll::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+  border-radius: 8px;
+}
+
+.table-scroll::-webkit-scrollbar-thumb {
+  background: #007aff; 
+  border-radius: 8px;
+}
+
+.table-scroll::-webkit-scrollbar-thumb:hover {
+  background: #0056b3;
+}
+
+
+/* Popup général */
+.swal-popup {
+  border-radius: 15px !important;
+  padding: 25px !important;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+  background: #f5f7fa !important;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.3) !important;
+}
+
+.swal-popup-delete {
+    border-radius: 15px !important;
+  padding: 25px !important;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+  background: #f5f7fa !important;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.3) !important;
+  height: 400px !important;
+}
+
+/* Titre */
+.swal-title {
+  font-size: 26px !important;
+  font-weight: 700 !important;
+  color: #007aff !important;
+  text-align: center !important;
+}
+
+/* Texte / contenu */
+.swal-text {
+  font-size: 18px !important;
+  color: #333 !important;
+  margin-top: 15px !important;
+  text-align: center !important;
+}
+
+/* Input pour édition */
+.swal-input {
+  border: 1px solid #ddd !important;
+  border-radius: 8px !important;
+  padding: 10px !important;
+  font-size: 16px !important;
+  width: 400px !important;
+  margin-top: 10px !important;
+}
+
+/* Boutons */
+.swal-confirm, .swal-cancel {
+  padding: 10px 25px !important;
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  border-radius: 8px !important;
+  margin: 5px !important;
+  cursor: pointer !important;
+  border: none !important;
+  transition: all 0.2s ease-in-out !important;
+}
+
+/* Confirm (bleu) */
+.swal-confirm {
+  background-color: #007aff !important;
+  color: white !important;
+}
+
+.swal-confirm:hover {
+  background-color: #0056b3 !important;
+  transform: translateY(-2px);
+}
+
+/* Cancel (gris) */
+.swal-cancel {
+  background-color: #ccc !important;
+  color: #333 !important;
+}
+
+.swal-cancel:hover {
+  background-color: #999 !important;
+  transform: translateY(-2px);
+}
+
+.table-search-container {
+  display: flex;
+  justify-content:end; 
+  margin-bottom: 20px;    
+  margin-right: 170px;
+}
+
+.table-search {
+  width: 300px;          
+  padding: 10px 15px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 16px;
+  outline: none;
+  transition: 0.3s all ease;
+}
+
+.table-search:focus {
+  border-color: #007aff;
+  box-shadow: 0 0 5px rgba(0,122,255,0.5);
+}
+
+.back-btn {
+  display: flex;
+  align-items: center;
+  padding: 5px 10px;
+  margin-bottom: 15px;
+  background-color: transparent; 
+  border: none; 
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.back-btn:hover {
+  color: white; 
+}
+

@@ -6,7 +6,7 @@ import { FaRegHeart, FaHeart, FaShoppingCart } from "react-icons/fa";
 import { IoIosArrowRoundBack } from "react-icons/io";
 import Swal from "sweetalert2";
 import "./BookDetails.css";
-import { addorder } from "../JS/UserSlice/OrderSlice";
+import { addorder } from "../JS/OrderSlice";
 
 const BookDetails = ({ ping, setping }) => {
     const dispatch = useDispatch();
@@ -30,6 +30,7 @@ const BookDetails = ({ ping, setping }) => {
             price: book.price,
             dateorder: new Date(),
             status: "non confirmé",
+            Owner:book.Owner
         });
         }
     }, [book, user]);

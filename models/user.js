@@ -23,6 +23,10 @@ const UserSchema = new schema ({
     languages : String , 
     age : String , 
     description : String , 
+    category : {
+        type : String , 
+        default : "user",
+    }
 });
 
 module.exports = mongoose.model("user", UserSchema);

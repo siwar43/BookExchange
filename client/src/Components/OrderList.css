@@ -1,0 +1,126 @@
+.cart-containerr {
+    padding: 50px;
+    font-family: Arial, sans-serif;
+    width: 1100px;
+    position: absolute;
+    top: 145px;
+    left: 220px;
+}
+
+.cart-containerr table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.cart-containerr th {
+    background-color: #1b7ddf;
+    color: white;
+    padding: 15px;
+    text-align: center;
+}
+
+.cart-containerr td {
+    padding: 15px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.cart-containerr img {
+    width: 60px;
+    height: 80px;
+    border-radius: 5px;
+}
+
+.status {
+    display: inline-block;
+    padding: 5px 10px;
+    background: #28a745;
+    color: white;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.close-btn {
+    background: #f8d7da;      /* fond léger rouge */
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    color: #e63946;           /* icône rouge */
+    padding: 5px 10px;        /* un peu de zone cliquable */
+    border-radius: 5px;        /* coins arrondis */
+    transition: all 0.2s ease; /* transition douce au hover */
+}
+
+.close-btn:hover {
+    background: #e63946;      /* fond rouge plus intense */
+    color: white;             /* texte/icone devient blanc */
+    transform: scale(1.1);    /* léger zoom */
+}
+
+
+.cart-summary {
+    text-align: right;
+    border-top: 2px solid #ddd;
+    padding-top: 20px;
+}
+
+.cart-summary p {
+    margin: 5px 0;
+    font-size: 16px;
+}
+
+.cart-summary h3 {
+    margin-top: 10px;
+    color: #000;
+    font-weight: bold;
+}
+
+
+.cart-actions {
+    margin-top: 10px;
+    display: flex;
+    gap: 20px;
+    justify-content: flex-end; 
+    align-items: center;    
+}
+
+.cart-actions button {
+    padding: 10px 25px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    max-width: 200px; 
+}
+
+.buy-btn {
+    background: #218838;
+    color: white;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px;
+    font-size: 16px;
+}
+
+.buy-btn:hover {
+    background: #19692c;
+}
+
+.back-btn {
+    background: #1b7ddf;
+    color: white;
+    padding: 15px 30px; 
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.back-btn:hover {
+    background: #1558a1;
+}
+
+

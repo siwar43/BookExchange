@@ -14,9 +14,9 @@ const User = require("../models/user");
 
 //register
 router.post("/register", registerRules(), validation, async (req, res) => {
-  const { username, email, password, image, address , phone  , country  , city , title , languages , age , description } = req.body;
+  const { username, email, password, image, address , phone  , country  , city , title , languages , age , description , category } = req.body;
   try {
-    const newUser = new User({ username, email, password, image, address , phone  , country  , city , title , languages , age , description });
+    const newUser = new User({ username, email, password, image, address , phone  , country  , city , title , languages , age , description , category});
     // check if the email exist
     const searchedUser = await User.findOne({ email });
 

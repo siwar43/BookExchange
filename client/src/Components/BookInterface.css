@@ -4,16 +4,15 @@ body {
   padding: 0;
 }
 
-/* Police pour les titres seulement */
 .filter-title, .books-header h2, .book-card h3 {
-  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif !important;
 }
 
 .container { 
   max-width: 1600px;
   margin: 0 auto; 
   padding: 15px 8px; 
-  margin-top: 1700px;
+  margin-top: 150px;
   display: flex; 
   gap: 20px; 
   flex-wrap: wrap;

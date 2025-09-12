@@ -1,13 +1,3 @@
-html, body {
-    height: 100%;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #f0f0f0;
-    font-family: Arial, sans-serif;
-}
-
 .wrapper {
     max-width: 450px;
     width: 100%;
@@ -16,6 +6,7 @@ html, body {
     border-radius: 10px;
     background-color: #fff;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    margin-top: 100px;
 }
 
 .logo-container {
@@ -80,21 +71,18 @@ html, body {
     color: #333;
 }
 
-/* Cacher le checkbox natif */
 .checkbox-container input[type="checkbox"] {
     display: none;
 }
 
-/* Créer un carré personnalisé */
 .checkbox-container label {
     position: relative;
     padding-left: 30px;
     cursor: pointer;
-    font-weight: bold; /* <-- Retire le bold */
+    font-weight: bold;
     letter-spacing: 1px;
 }
 
-/* Le carré */
 .checkbox-container label::before {
     content: "";
     position: absolute;
@@ -108,13 +96,11 @@ html, body {
     transition: all 0.2s ease;
 }
 
-/* Coché */
 .checkbox-container input[type="checkbox"]:checked + label::before {
     background-color: #28a745;
     border-color: #28a745;
 }
 
-/* La coche */
 .checkbox-container label::after {
     content: "";
     position: absolute;

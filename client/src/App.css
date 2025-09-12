@@ -1,3 +1,12 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    background-color: white !important;
+    font-family: Arial, sans-serif;
+}
+
 /* ===== VIDEO BACKGROUND ===== */
 .home {
     font-family: 'Arial', sans-serif;
@@ -5,7 +14,7 @@
     height: 100vh;
     position: relative;
     overflow: hidden;
-    margin-top: 728px;
+    /* margin-top: 100px; */
     max-width: 1521px;
 }
 
@@ -33,7 +42,7 @@
 
 /* ===== About section ===== */
 .about-container {
-    margin-top: 1300px;
+
     padding : 200px;
     text-align: center;
 }
